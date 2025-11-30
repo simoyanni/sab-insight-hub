@@ -5,9 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import EnergyOverview from "./pages/EnergyOverview";
-import Individuals from "./pages/target-groups/Individuals";
-import Businesses from "./pages/target-groups/Businesses";
-import LocalAuthorities from "./pages/target-groups/LocalAuthorities";
 import Solar from "./pages/energy-categories/Solar";
 import Wind from "./pages/energy-categories/Wind";
 import Heat from "./pages/energy-categories/Heat";
@@ -31,9 +28,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/energy-overview" element={<EnergyOverview />} />
-          <Route path="/target-groups/individuals" element={<Individuals />} />
-          <Route path="/target-groups/businesses" element={<Businesses />} />
-          <Route path="/target-groups/local-authorities" element={<LocalAuthorities />} />
           <Route path="/energy-categories/solar" element={<Solar />} />
           <Route path="/energy-categories/wind" element={<Wind />} />
           <Route path="/energy-categories/heat" element={<Heat />} />

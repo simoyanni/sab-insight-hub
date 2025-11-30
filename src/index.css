@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    /* Navy-based Government Theme */
-    --background: 60 7% 96%;
+    /* Light Government Theme */
+    --background: 210 20% 98%;
     --foreground: 213 54% 11%;
 
     --card: 0 0% 100%;

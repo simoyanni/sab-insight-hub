@@ -1,10 +1,5 @@
 import {
-  LayoutDashboard,
   Zap,
-  Users,
-  User,
-  Building2,
-  Landmark,
   Sun,
   Wind,
   Flame,
@@ -27,9 +22,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubItem,
-  SidebarMenuSubButton,
   SidebarHeader,
   SidebarFooter,
   useSidebar,
@@ -39,17 +31,9 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { cn } from "@/lib/utils";
 
 const mainNavItems = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Energy Overview", url: "/energy-overview", icon: Zap },
-];
-
-const targetGroupItems = [
-  { title: "Individuals", url: "/target-groups/individuals", icon: User },
-  { title: "Businesses", url: "/target-groups/businesses", icon: Building2 },
-  { title: "Local Authorities", url: "/target-groups/local-authorities", icon: Landmark },
 ];
 
 const energyCategoryItems = [
@@ -80,17 +64,17 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible="icon" className="border-r-0">
       <SidebarHeader className="p-4 border-b border-sidebar-border">
-        <div className="flex items-center gap-3">
+        <NavLink to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <div className="w-8 h-8 rounded-lg dashboard-gradient flex items-center justify-center">
             <Zap className="w-4 h-4 text-sidebar-primary-foreground" />
           </div>
           {!collapsed && (
             <div className="flex flex-col">
-              <span className="text-sm font-semibold text-sidebar-foreground">SAB Energy</span>
-              <span className="text-xs text-sidebar-foreground/60">Insights Dashboard</span>
+              <span className="text-sm font-semibold text-sidebar-foreground">ampéra</span>
+              <span className="text-xs text-sidebar-foreground/60">insight</span>
             </div>
           )}
-        </div>
+        </NavLink>
       </SidebarHeader>
 
       <SidebarContent className="px-2 py-4">
@@ -113,43 +97,6 @@ export function AppSidebar() {
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <Collapsible defaultOpen={isGroupActive(targetGroupItems)} className="group/collapsible">
-            <SidebarGroupLabel asChild>
-              <CollapsibleTrigger className="flex w-full items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4" />
-                  {!collapsed && <span>Target Groups</span>}
-                </div>
-                {!collapsed && (
-                  <ChevronDown className="w-4 h-4 transition-transform group-data-[state=open]/collapsible:rotate-180" />
-                )}
-              </CollapsibleTrigger>
-            </SidebarGroupLabel>
-            <CollapsibleContent>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {targetGroupItems.map((item) => (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton
-                        asChild
-                        isActive={isActive(item.url)}
-                        tooltip={item.title}
-                        className="pl-6"
-                      >
-                        <NavLink to={item.url}>
-                          <item.icon className="w-4 h-4" />
-                          <span>{item.title}</span>
-                        </NavLink>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </CollapsibleContent>
-          </Collapsible>
         </SidebarGroup>
 
         <SidebarGroup>
