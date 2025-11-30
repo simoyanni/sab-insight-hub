@@ -16,6 +16,7 @@ import Mobility from "./pages/energy-categories/Mobility";
 import Hydrogen from "./pages/energy-categories/Hydrogen";
 import Grid from "./pages/energy-categories/Grid";
 import Recommendations from "./pages/Recommendations";
+import Reports from "./pages/Reports";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/energy-categories/hydrogen" element={<Hydrogen />} />
           <Route path="/energy-categories/grid" element={<Grid />} />
           <Route path="/recommendations" element={<Recommendations />} />
+          <Route path="/reports" element={<Reports />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
