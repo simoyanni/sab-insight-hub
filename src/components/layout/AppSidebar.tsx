@@ -15,6 +15,7 @@ import {
   Lightbulb,
   Info,
   ChevronDown,
+  FileText,
 } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
@@ -63,6 +64,7 @@ const energyCategoryItems = [
 
 const bottomNavItems = [
   { title: "Recommendation Engine", url: "/recommendations", icon: Lightbulb },
+  { title: "Reports & Export", url: "/reports", icon: FileText },
   { title: "About", url: "/about", icon: Info },
 ];
 
