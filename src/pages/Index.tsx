@@ -2,7 +2,7 @@ import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import { CategoryPanel } from "@/components/dashboard/CategoryPanel";
 import { 
   Sun, Wind, Flame, Battery, Car, Atom, Network, Factory,
-  FileText, Download, Zap, TrendingUp
+  FileText, Download, TrendingUp
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
@@ -129,18 +129,27 @@ const Index = () => {
     <DashboardLayout>
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Hero Header */}
-        <div className="text-center py-8 animate-fade-in">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-xl dashboard-gradient flex items-center justify-center">
-              <Zap className="w-6 h-6 text-primary-foreground" />
+        <div className="py-8 animate-fade-in">
+          <div className="flex items-center gap-4 mb-6">
+            {/* Pentagon Logo with Apple-like rounding */}
+            <div className="w-12 h-12 flex-shrink-0">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <path
+                  d="M50 8 L92 35 Q95 37 94 41 L80 82 Q78 86 74 87 L26 87 Q22 86 20 82 L6 41 Q5 37 8 35 Z"
+                  fill="hsl(var(--accent))"
+                  className="drop-shadow-sm"
+                />
+              </svg>
+            </div>
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold text-accent tracking-tight">
+                ampéra insight
+              </h1>
+              <p className="text-sm text-muted-foreground uppercase tracking-widest font-medium">
+                Required Funding for the Energy Sector
+              </p>
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-2">
-            ampéra <span className="text-accent">insight</span>
-          </h1>
-          <p className="text-lg text-muted-foreground uppercase tracking-widest font-medium">
-            Required Funding for the Energy Sector
-          </p>
         </div>
 
         {/* Main Growth Chart */}
