@@ -205,7 +205,7 @@ const Index = () => {
                 <path d="M50 8 L92 35 Q95 37 94 41 L80 82 Q78 86 74 87 L26 87 Q22 86 20 82 L6 41 Q5 37 8 35 Z" fill="hsl(215, 60%, 35%)" className="drop-shadow-sm" />
               </svg>
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-muted-foreground">
+            <h1 className="text-2xl font-bold tracking-tight text-muted-foreground md:text-4xl">
               ampéra insight
             </h1>
           </div>
